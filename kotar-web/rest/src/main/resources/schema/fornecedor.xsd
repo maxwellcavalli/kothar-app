@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://kotar.com.br/web/soap/schema/fornecedor"
+	xmlns:tns="http://kotar.com.br/web/soap/schema/fornecedor"
+	xmlns:ex="http://kotar.com.br/web/soap/schema/common"
+	elementFormDefault="qualified">
+	
+	<import namespace="http://kotar.com.br/web/soap/schema/common"/>
+
+	<element name="getFornecedoresRequest">
+		<complexType>
+			<sequence>
+				<element name="token" type="string"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="getFornecedoresResponse">
+		<complexType>
+			<sequence>
+				<element name="fornecedor" type="ex:fornecedor" minOccurs="0"
+					maxOccurs="unbounded"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+	
+
+
+
+</schema>

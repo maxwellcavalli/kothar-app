@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://kotar.com.br/web/soap/schema/cotacao"
+	xmlns:tns="http://kotar.com.br/web/soap/schema/cotacao" xmlns:ex="http://kotar.com.br/web/soap/schema/common"
+	elementFormDefault="qualified">
+
+	<import namespace="http://kotar.com.br/web/soap/schema/common" />
+
+	<element name="getCotacoesRequest">
+		<complexType>
+			<sequence>
+				<element name="nome" type="string"></element>
+				<element name="uuidFornecedor" type="string" />
+				<element name="token" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="getCotacoesResponse">
+		<complexType>
+			<sequence>
+				<element name="cotacao" type="ex:cotacao" maxOccurs="unbounded"
+					minOccurs="0" />
+			</sequence>
+		</complexType>
+	</element>
+
+
+	<element name="getInfoCotacaoRequest">
+		<complexType>
+			<sequence>
+				<element name="id" type="long"></element>
+				<element name="uuidFornecedor" type="string" />
+				<element name="token" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+
+	<element name="getInfoCotacaoResponse">
+		<complexType>
+			<sequence>
+				<element name="cotacao" type="ex:cotacao" />
+			</sequence>
+		</complexType>
+	</element>
+
+
+	<complexType name="periodoHelper">
+		<sequence>
+			<element name="inicio" type="date"></element>
+			<element name="fim" type="date"></element>
+		</sequence>
+	</complexType>
+
+</schema>

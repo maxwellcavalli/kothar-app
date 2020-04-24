@@ -1,0 +1,58 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://kotar.com.br/web/soap/schema/produto"
+	xmlns:tns="http://kotar.com.br/web/soap/schema/produto"
+	xmlns:common="http://kotar.com.br/web/soap/schema/common"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://kotar.com.br/web/soap/schema/common" schemaLocation="common.xsd"/>
+
+	<xs:element name="getProdutoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="produtoFilter" type="tns:produtoFilter" />
+				<xs:element name="token" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getProdutoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="produto" type="common:produto" maxOccurs="unbounded"
+					minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+
+	<xs:element name="persistirProdutoRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="nome" type="xs:string" />
+				<xs:element name="detalhamento" type="xs:string" />
+				<xs:element name="foto" type="common:produtoFoto" maxOccurs="unbounded" minOccurs="0" />
+				<xs:element name="precoUnitario" type="xs:double" />
+				<xs:element name="uuidFornecedor" type="xs:string" />
+				<xs:element name="identificador" type="xs:string" />
+				<xs:element name="token" type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="persistirProdutoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="mensagem" type="xs:string" />
+				<xs:element name="error" type="xs:boolean"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="produtoFilter">
+		<xs:sequence>
+			<xs:element name="nome" type="xs:string" />
+			<xs:element name="pageable" type="common:pageable" />
+		</xs:sequence>
+	</xs:complexType>
+ 
+</xs:schema>

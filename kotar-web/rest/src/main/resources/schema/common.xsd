@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://kotar.com.br/web/soap/schema/common"
+        xmlns:tns="http://kotar.com.br/web/soap/schema/common"
+        elementFormDefault="qualified">
+
+    <complexType name="cliente">
+        <sequence>
+            <element name="cliente_id" type="long"></element>
+            <element name="cliente_nome" type="string"></element>
+            <element name="cpf" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="cep">
+        <sequence>
+            <element name="cep_nome" type="string"></element>
+            <element name="codigoPostal" type="string"></element>
+            <element name="cep_bairro" type="tns:bairro"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="bairro">
+        <sequence>
+            <element name="bairro_nome" type="string"></element>
+            <element name="bairro_cidade" type="tns:cidade"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="cidade">
+        <sequence>
+            <element name="cidade_nome" type="string"></element>
+            <element name="cidade_estado" type="tns:estado"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="estado">
+        <sequence>
+            <element name="estado_nome" type="string"></element>
+            <element name="sigla" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="enderecoComplemento">
+        <sequence>
+            <element name="numero" type="string"></element>
+            <element name="complemento" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="pageable">
+        <sequence>
+            <element name="pageNumber" type="int"/>
+            <element name="pageSize" type="int"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="produtoFoto">
+        <sequence>
+            <element name="nome" type="string"/>
+            <element name="conteudo" type="string"/>
+        </sequence>
+    </complexType>
+
+
+    <complexType name="produto">
+        <sequence>
+            <element name="id" type="long"/>
+            <element name="nome" type="string"/>
+            <element name="detalhamento" type="string"/>
+
+            <element name="identificador" type="string"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="fornecedor">
+        <sequence>
+            <element name="nome" type="string"></element>
+            <element name="cnpj" type="string"></element>
+            <element name="identificacao" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="cotacao">
+        <sequence>
+            <element name="cotacao_id" type="long"></element>
+            <element name="cotacao_nome" type="string"></element>
+            <element name="cliente" type="tns:cliente"></element>
+            <element name="cotacao_endereco" type="tns:cotacaoEndereco"></element>
+            <element name="codigo_voucher" type="string"></element>
+
+            <element name="itens" type="tns:cotacaoItemFornecedor" maxOccurs="unbounded" minOccurs="0"></element>
+
+        </sequence>
+    </complexType>
+
+    <complexType name="cotacaoItem">
+        <sequence>
+            <element name="quantidade" type="double"></element>
+            <element name="observacao" type="string"></element>
+            <element name="produto" type="tns:produto"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="cotacaoItemFornecedor">
+        <sequence>
+            <element name="cotacaoItem" type="tns:cotacaoItem"></element>
+            <element name="valor_unitario" type="double"></element>
+            <element name="marca_modelo" type="string"></element>
+        </sequence>
+    </complexType>
+
+    <complexType name="cotacaoEndereco">
+        <sequence>
+            <element name="cep" type="tns:cep"></element>
+            <element name="complemento" type="tns:enderecoComplemento"></element>
+        </sequence>
+    </complexType>
+
+
+</schema>

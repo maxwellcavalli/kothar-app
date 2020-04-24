@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://kotar.com.br/web/soap/schema/usuario"
+	xmlns:tns="http://kotar.com.br/web/soap/schema/usuario"
+	elementFormDefault="qualified">
+
+	<element name="getTokenRequest">
+		<complexType>
+			<sequence>
+				<element name="login" type="string" />
+				<element name="password" type="string" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="getTokenResponse">
+		<complexType>
+			<sequence>
+				<element name="token" type="string"></element>
+				<element name="mensagem" type="string"></element>
+				<element name="error" type="boolean"></element>
+			</sequence>
+		</complexType>
+	</element>
+
+
+</schema>
