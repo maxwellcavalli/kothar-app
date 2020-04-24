@@ -3,20 +3,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>backend</artifactId>
-	<name>backend</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>kothar-backend</artifactId>
+	<name>kothar-backend</name>
+	<description>Kothar Business Rules</description>
 
 	<parent>
 		<groupId>br.com.kotar</groupId>
-		<artifactId>parent</artifactId>
+		<artifactId>kothar-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<dependencies>
 		<dependency>
 			<groupId>br.com.kotar</groupId>
-			<artifactId>jpa</artifactId>
+			<artifactId>kothar-jpa</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
@@ -24,7 +24,6 @@
 			<groupId>com.fasterxml.jackson.datatype</groupId>
 			<artifactId>jackson-datatype-hibernate5</artifactId>
 		</dependency>
-
 
 		<dependency>
 			<groupId>info.debatty</groupId>

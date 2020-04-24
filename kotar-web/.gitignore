@@ -22,3 +22,5 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+/rest/src/main/java/br/com/kotar/web/soap/

@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>scheduler</artifactId>
-	<name>scheduler</name>
-	<description>Demo project for Spring Boot</description>
+	<artifactId>kothar-scheduler</artifactId>
+	<name>kothar-scheduler</name>
+	<description>Kothar Schedule Functions</description>
 
 	<parent>
 		<groupId>br.com.kotar</groupId>
-		<artifactId>parent</artifactId>
+		<artifactId>kothar-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
