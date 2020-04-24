@@ -24,3 +24,4 @@ nbdist/
 .nb-gradle/
 
 /rest/src/main/java/br/com/kotar/web/soap/
+/rest/src/main/java/META-INF/JAXB/
